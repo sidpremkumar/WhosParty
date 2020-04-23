@@ -82,7 +82,7 @@ def main():
         clf, labels = pickle.load(f, encoding='latin1')
 
     print("classifying images in {}".format(input_dir))
-    for fname in tqdm(os.listdir(input_dir)):
+    for fname in os.listdir(input_dir):
         img_path = os.path.join(input_dir, fname)
         try:
             pred, locs = predict_one_image(img_path, clf, labels)
